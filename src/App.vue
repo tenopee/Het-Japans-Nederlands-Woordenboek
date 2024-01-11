@@ -1,62 +1,72 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import SearchBox from './components/SearchBox.vue';
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div class="header-wrap">
+      <img src="@/assets/logo.svg" alt="日蘭辞書 ロゴ" width="40" height="40" />
+      <SearchBox></SearchBox>
     </div>
   </header>
-
+  <nav>
+    <ul>
+      <li>
+        <RouterLink to="/" class="icn home">home</RouterLink>
+        <RouterLink to="/search" class="icn search">search</RouterLink>
+      </li>
+    </ul>
+  </nav>
   <RouterView />
+  <footer>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <div class="footer__wrap">
+      <img src="@/assets/logo.svg" alt="日蘭辞書 ロゴ" width="30" height="30" />
+      <div role="navigation">
+        <ul>
+          <li>
+            <RouterLink to="/"><span class="icn-text-base icn-home">home</span></RouterLink>
+            <RouterLink to="/search"><span class="icn-text-base icn-home"></span></RouterLink>
+          </li>
+
+        </ul>
+      </div>
+      <p class="">futta</p>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.header-wrap {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 60px 600px auto;
+  align-items: center;
+  height: 40px;
+  padding: 8px 30px;
+  box-sizing: initial;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  background-color: var(--bgc-nav);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.icn-home {
+  display: block;
+  padding-top: 40px;
+}
+.icn-home::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  background-color: #4e4e4e;
+  mask: url("./assets/icn_home.svg") top center / 20px no-repeat;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -81,5 +91,8 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+  .footer__wrap {
+    display: flex;
+  }
+} */
 </style>

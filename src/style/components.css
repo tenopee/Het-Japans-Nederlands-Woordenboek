@@ -1,0 +1,7 @@
+.icn-text-base {
+	position: relative;
+}
+.icn-text-base::before {
+	position: absolute;
+	content: "";
+}

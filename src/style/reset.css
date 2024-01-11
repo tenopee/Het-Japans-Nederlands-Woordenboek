@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+html {
+  text-size-adjust: 100%;
+}
+li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+select {
+  font-size: unset;
+  appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
